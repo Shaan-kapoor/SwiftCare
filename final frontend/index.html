@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SwiftCare Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" integrity="sha512-r0S0HxTWvKpZ4w/4Jb4a4/LCDfKukzvrCpkTw9BNDBnWn71/jTEaHbLdjwZz4tG4Q4nKjhd97fQ67n/nXhMjMw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>SwiftCare</h1>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age</label>
+      <input type="text" id="age" name="age" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">Please select...</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="medical-problem">Medical Problem</label>
+      <select id="medical-problem" name="medical-problem" required>
+        <option value="">Please select...</option>
+        <option value="Fever">Fever</option>
+        <option value="Cough">Cough</option>
+        <option value="Headache">Headache</option>
+        <option value="Back pain">Back pain</option>
+        <option value="Stomach ache">Stomach ache</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-HaIBNhB+G2QTW8jkgqrbqL0t2vvSpvO8dC2G7mO4zfsxA1vVb8J+6VoRXIaS+aSj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js" integrity="sha512-P8zNYMDQf4uMA7V1dJc8B7ehzt+X9u+E7CEaDZkgPUECye6w5mJPKLOU6OaU6eDJP5QrA6O5+5Z5E5K3qzN0pg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
