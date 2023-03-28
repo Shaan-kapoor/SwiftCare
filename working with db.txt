@@ -1,0 +1,54 @@
+<?php
+// Database configuration
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'swift';
+
+// Create database connection
+$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// If the form is submitted, insert the data into the database
+if(isset($_POST['submit'])) {
+    $sno = $_POST['sno'];
+    $name = $_POST['name'];
+    $concern = $_POST['concern'];
+    $date = $_POST['date'];
+
+    // Insert data into table
+    $sql = "INSERT INTO contacts ( name, concern, date) VALUES ('$name', '$concern', '$date')";
+    if(mysqli_query($conn, $sql)){
+        echo "Record added successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    }
+}
+// Close database connection
+mysqli_close($conn);
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swift Form</title>
+</head>
+<body>
+    <h2>Enter Entry</h2>
+    <form method="post">
+        <label>Sno:</label>
+        <input type="text" name="sno" required><br><br>
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br>
+        <label>Concern:</label>
+        <textarea name="concern" required></textarea><br><br>
+        <label>Date:</label>
+        <input type="date" name="date" required><br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+</html>
